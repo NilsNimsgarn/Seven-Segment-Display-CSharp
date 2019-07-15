@@ -1,0 +1,60 @@
+using System;
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var testfall = Convert.ToInt32(Console.ReadLine());
+            
+            for (var x = 0; x < testfall; x++)
+            {
+                var nummer = Convert.ToInt32(Console.ReadLine());
+                var anzahl = 0;
+                var ergebnis = "";
+                
+                switch (nummer)
+                {
+                    case 0: case 6: case 9:
+                    anzahl = 6;
+                    break;
+                    case 1:
+                    anzahl = 2;
+                    break;
+                    case 2: case 3: case 5:
+                    anzahl = 5;
+                    break;
+                    case 4:
+                    anzahl = 4;
+                    break;
+                    case 7:
+                    anzahl = 3;
+                    break;
+                    case 8:
+                    anzahl = 7;
+                    break;
+                }
+                
+                var eins = anzahl / 2;
+                var rest = anzahl - 2 * eins;
+                
+                if (rest == 1)
+                {
+                    ergebnis += "7";
+                    for(var y = 1; y < eins; y++)
+                    {
+                        ergebnis += "1";
+                    }
+                }
+                else
+                {
+                    for(var y = 0; y < eins; y++)
+                    {
+                        ergebnis += "1";
+                    }
+                }
+                Console.WriteLine(ergebnis);
+            }
+        }
+    }
+}
